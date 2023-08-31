@@ -1,0 +1,16 @@
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+def encrypt(plain_text, k):
+    cipher = []
+    
+    for c in plain_text:
+        i = alphabet.index(c)
+        j = (i + k) % len(alphabet)
+        cipher.append(alphabet[j])
+    return ''.join(cipher)
+    
+def decrypt(cipher_text, k):
+    return encrypt(cipher_text, -k)
+        
+print (encrypt("hello", 1))
+print (decrypt("ifmmp", 1))
